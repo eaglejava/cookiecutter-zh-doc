@@ -17,7 +17,6 @@
 # cookiecutter-中英文对照文档
 (本库主要是进行中文文档翻译学习，部分翻译内容是根据自己的理解翻译，非原句原样翻译。因译者水平有限，欢迎指正)
 
-A command-line utility that creates projects from **cookiecutters** (project templates), e.g. creating a Python package project from a Python package project template.
 **cookiecutters**是一个帮助用户从项目模板中快速创建项目的命令行工具程序。例如，根据Python package工程模板快速创建一个Python package项目。
 
 - Documentation: [https://cookiecutter.readthedocs.io](https://cookiecutter.readthedocs.io)
@@ -29,23 +28,15 @@ A command-line utility that creates projects from **cookiecutters** (project tem
 ## Features
 ## 特点
 
-- Cross-platform: Windows, Mac, and Linux are officially supported.
 - 跨平台:官方支持Windows，Mac，Linux
-- You don't have to know/write Python code to use Cookiecutter.
 - 使用Cookiecutter的用户无需掌握或者编写Python代码
-- Works with Python 3.7, 3.8, 3.9, 3.10, 3.11
 - 支持的Python版本包括:3.7, 3.8, 3.9, 3.10, 3.11
-- Project templates can be in any programming language or markup format:
-  Python, JavaScript, Ruby, CoffeeScript, RST, Markdown, CSS, HTML, you name it.
-  You can use multiple languages in the same project template.
 - 项目模板可以是任何编程语言或者标记文本格式:
   Python, JavaScript, Ruby, CoffeeScript, RST, Markdown, CSS, HTML 等编程语言或者标记文本格式.
   你可以在同一个项目模板中使用多种语言。
 
-### For users of existing templates 
 ### 已经存在的用户可用模板
 
-- Simple command line usage:
 - 简单的命令行用法
 
   ```bash
@@ -58,42 +49,31 @@ A command-line utility that creates projects from **cookiecutters** (project tem
   $ cookiecutter gh:audreyfeldroy/cookiecutter-pypackage
   ```
 
-- Use it at the command line with a local template:
 - 在命令行中通过本地模板创建项目
 
   ```bash
-  # Create project in the current working directory, from the local
   # 在本地，创建项目在当前工作目录中的示例
-  # cookiecutter-pypackage/ template
   # cookiecutter-pypackage/ 表示模板目录
   $ cookiecutter cookiecutter-pypackage/
   ```
 
-- Or use it from Python:
 - 或者在Python中使用
 
   ```py
   from cookiecutter.main import cookiecutter
 
-  # Create project from the cookiecutter-pypackage/ template
   # 通过本地目录cookiecutter-pypackage/中的模板来创建项目
   cookiecutter('cookiecutter-pypackage/')
 
-  # Create project from the cookiecutter-pypackage.git repo template
   # 通过远程仓库中的cookiecutter-pypackage.git模板来创建项目
   cookiecutter('https://github.com/audreyfeldroy/cookiecutter-pypackage.git')
   ```
 
-- Unless you suppress it with `--no-input`, you are prompted for input:
 - 当你没有显示的使用`--no-input`时，系统会提示你输入:
-  - Prompts are the keys in `cookiecutter.json`.
   - 交互命令中的提示的输入变量是`cookiecutter.json`文件中keys
-  - Default responses are the values in `cookiecutter.json`.
   - 默认的响应是`cookiecutter.json`文件中对应的value
-  - Prompts are shown in order.
   - 提示词的顺序是和`cookiecutter.json`文件中对应的顺序一致
     
-- Cross-platform support for `~/.cookiecutterrc` files:
 - 跨平台支持 `~/.cookiecutterrc` 文件:
 
   ```yaml
@@ -104,9 +84,7 @@ A command-line utility that creates projects from **cookiecutters** (project tem
   cookiecutters_dir: "~/.cookiecutters/"
   ```
 
-- Cookiecutters (cloned Cookiecutter project templates) are put into `~/.cookiecutters/` by default, or cookiecutters_dir if specified.
 - Cookiecutters（克隆Cookiecutter工程模板）会默认将代码放入到`~/.cookiecutters/`目录或者指定的目录
-- If you have already cloned a cookiecutter into `~/.cookiecutters/`,  you can reference it by directory name:
 - 如果你已经克隆了一个cookiecutter项目到`~/.cookiecutters/`目录，你可以通过目录名引用它:
 
   ```bash
@@ -116,40 +94,28 @@ A command-line utility that creates projects from **cookiecutters** (project tem
   $ cookiecutter cookiecutter-pypackage
   ```
 
-- You can use local cookiecutters, or remote cookiecutters directly from Git repos or Mercurial repos on Bitbucket.
 - 你可以使用本地的cookiecutters模板或者远程仓库的cookiecutters模板
-- Default context: specify key/value pairs that you want to be used as defaults whenever you generate a project.
 - 默认上下文:在生成工程时指定默认的key/value键值对
-- Inject extra context with command-line arguments:
 - 使用命令行参数注入默认的上下文参数:
 
   ```bash
   cookiecutter --no-input gh:msabramo/cookiecutter-supervisor program_name=foobar startsecs=10
   ```
 
-- Direct access to the Cookiecutter API allows for the injection of extra context.
 - 直接访问Cookiecutter API时，允许注入额外的上下文参数
-- Paths to local projects can be specified as absolute or relative.
 - 本地项目的路径可以被指定为绝对的或者相对的
-Projects are generated to your current directory or to the target directory if specified with `-o` option.
 默认生成的项目会在你的当前路径，或者通过`-o`制定目标路径。
 
-### For template creators
 ### 面向模板开发者
 
-- Supports unlimited levels of directory nesting.
 - 支持无限制的目录嵌套层级
-- 100% of templating is done with Jinja2.
 - 所有的目标均使用Jinja2开发完成。
-- Both, directory names and filenames can be templated.
 - 目录名称和文件名称均可以支持模板化
-  For example:
   例如:
 
   ```py
   {{cookiecutter.repo_name}}/{{cookiecutter.repo_name}}/{{cookiecutter.repo_name}}.py
   ```
-- Simply define your template variables in a `cookiecutter.json` file. You can also add human-readable questions and choices that will be prompted to the user for each variable using the `__prompts__` key. Those human-readable questions supports [`rich` markup](https://rich.readthedocs.io/en/stable/markup.html) such as `[bold yellow]this is bold and yellow[/]`
 - 只需要在`cookiecutter.json` 文件中定义模板变量. 你可以通过`__prompts__`给每个变量增加用户可读性强的提示信息. Those human-readable questions supports [`rich` markup](https://rich.readthedocs.io/en/stable/markup.html) such as `[bold yellow]this is bold and yellow[/]`
   例如:
 
