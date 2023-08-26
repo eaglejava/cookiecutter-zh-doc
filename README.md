@@ -69,7 +69,7 @@
   cookiecutter('https://github.com/audreyfeldroy/cookiecutter-pypackage.git')
   ```
 
-- 当你没有显示的使用`--no-input`时，系统会提示你输入:
+- 当你没有显式地使用`--no-input`时，系统会提示你输入:
   - 交互命令中的提示的输入变量是`cookiecutter.json`文件中keys
   - 默认的响应是`cookiecutter.json`文件中对应的value
   - 提示词的顺序是和`cookiecutter.json`文件中对应的顺序一致
@@ -142,31 +142,31 @@
     }
   }
   ```
-- Pre- and post-generate hooks: Python or shell scripts to run before or after generating a project.
+- 在生成项目前或者生成项目后调用的hooks:在项目生成前后运行的Python或Shell脚本。
 
-## Available Cookiecutters
+## 可用的Cookiecutters
 
-Making great cookies takes a lot of cookiecutters and contributors.
-We're so pleased that there are many Cookiecutter project templates to choose from.
-We hope you find a cookiecutter that is just right for your needs.
+开发出好的项目需要许多cookiecutters模板和贡献者。
+我们非常高兴有许多Cookiecutter项目模板可供选择。
+我们希望你可以找到你需要的Cookiecutter项目模板。
 
-### A Pantry Full of Cookiecutters
 
-The best place to start searching for specific and ready-to-use cookiecutter templates is [Github search](https://github.com/search?q=cookiecutter&type=Repositories).
-Just type `cookiecutter` and you will discover over 4000 related repositories.
+### 一个丰富的Cookiecutters模板库
 
-We also recommend you check related GitHub topics.
-For general search use [cookiecutter-template](https://github.com/topics/cookiecutter-template).
-For specific topics try to use `cookiecutter-yourtopic`, like `cookiecutter-python` or `cookiecutter-datascience`.
-This is a new GitHub feature, so not all active repositories use it at the moment.
+[Github search](https://github.com/search?q=cookiecutter&type=Repositories)是查找现成的Cookiecutters模板库最好的地方，执行在搜索框输入`cookiecutter`，就可以找到超过4000个相关的资源库。
+
+我们也建议你检查相关GitHub主题，常用的有[cookiecutter-template](https://github.com/topics/cookiecutter-template)
+如果你要指定特殊的主题，可以使用`cookiecutter-yourtopic`, 例如 `cookiecutter-python` 或者 `cookiecutter-datascience`。
+这是GitHub的一个新特性，所以不是所有的资源库当前都可以这样使用。
 
 If you are a template developer please add related [topics](https://help.github.com/en/github/administering-a-repository/classifying-your-repository-with-topics) with `cookiecutter` prefix to your repository.
-We believe it will make it more discoverable.
-You are almost not limited in topic amount, use it!
+如果你是一个模板开发人员，请使用`cookiecutter`前缀关联你的代码库[topics](https://help.github.com/en/github/administering-a-repository/classifying-your-repository-with-topics)
+这样会让你的模板更容易被用户搜索到。
+你几乎不会收到话题数量的限制，所以推荐你使用关联topic的功能！
 
-### Cookiecutter Specials
+### 特殊的Cookiecutter资源库
 
-These Cookiecutters are maintained by the cookiecutter team:
+下面的Cookiecutters资源库由cookiecutter团队维护:
 
 - [cookiecutter-pypackage](https://github.com/audreyfeldroy/cookiecutter-pypackage):
   ultimate Python package project template by [@audreyfeldroy's](https://github.com/audreyfeldroy).
@@ -176,66 +176,68 @@ These Cookiecutters are maintained by the cookiecutter team:
 - [cookiecutter-pytest-plugin](https://github.com/pytest-dev/cookiecutter-pytest-plugin):
   Minimal Cookiecutter template for authoring [pytest](https://docs.pytest.org/) plugins that help you to write better programs.
 
-## Community
+## 社区
 
-The core committer team can be found in the [authors' section](AUTHORS.md).
-We are always welcome and invite you to participate.
+核心代码提交团队: [authors' section](AUTHORS.md).
+我们也欢迎并邀请您加入.
 
-Stuck? Try one of the following:
+如果使用时遇到了问题，请按以下顺序来解决:
 
-- See the [Troubleshooting](https://cookiecutter.readthedocs.io/en/latest/troubleshooting.html) page.
-- Ask for help on [Stack Overflow](https://stackoverflow.com/questions/tagged/cookiecutter).
-- You are strongly encouraged to [file an issue](https://github.com/cookiecutter/cookiecutter/issues?q=is%3Aopen) about the problem.
-  Do it even if it's just "I can't get it to work on this cookiecutter" with a link to your cookiecutter.
-  Don't worry about naming/pinpointing the issue properly.
-- Ask for help on [Discord](https://discord.gg/9BrxzPKuEW) if you must (but please try one of the other options first, so that others can benefit from the discussion).
+- 阅读[Troubleshooting](https://cookiecutter.readthedocs.io/en/latest/troubleshooting.html)页面.
+- 在[Stack Overflow](https://stackoverflow.com/questions/tagged/cookiecutter)上查找或者提问寻求帮助.
+- 强烈建议你在 [file an issue](https://github.com/cookiecutter/cookiecutter/issues?q=is%3Aopen) 页面提一个关于本问题的issue.
+  大胆的去提问，不要担心无法正确的命名或者定位问题。
+- 如果有必要，可以在[Discord](https://discord.gg/9BrxzPKuEW)上需求帮助。(为了大家能更多的从讨论中获益，希望你先按照前面的步骤进行排查，如果排查完依然无法解决，可以到Discord讨论).
 
-Development on Cookiecutter is community-driven:
+Cookiecutter的研发是社区驱动地:
 
-- Huge thanks to all the [contributors](AUTHORS.md) who have pitched in to help make Cookiecutter an even better tool.
-- Everyone is invited to contribute.
-  Read the [contributing instructions](CONTRIBUTING.md), then get started.
+- 非常感谢所有的 [contributors](AUTHORS.md)，你们的积极参与使得Cookiecutter成为了一个更好的工具。
+- 欢迎所有人参与并贡献自己的代码
+  请阅读[contributing instructions](CONTRIBUTING.md), 然后就可以开始参与贡献了.
 - Connect with other Cookiecutter contributors and users on [Discord](https://discord.gg/9BrxzPKuEW)
-  (note: due to work and other commitments, a core committer might not always be available)
+- 可以在社群[Discord](https://discord.gg/9BrxzPKuEW)上联系其他Cookiecutter作者或者用户
+  (注意: 除非工作或者其他的义务, 核心提交者可能不总是在线的)
 
-Encouragement is unbelievably motivating.
-If you want more work done on Cookiecutter, show support:
+用户鼓励是对我们最大的激励.
+如果你想对Cookiecutter做更多的工作以表示支持:
 
-- Thank a core committer for their efforts.
+- 感谢核心提交者的努力
 - Star [Cookiecutter on GitHub](https://github.com/cookiecutter/cookiecutter).
 - [Support this project](#support-this-project)
 
 Got criticism or complaints?
+被批评或者抱怨？
 
-- [File an issue](https://github.com/cookiecutter/cookiecutter/issues?q=is%3Aopen) so that Cookiecutter can be improved.
-  Be friendly and constructive about what could be better.
-  Make detailed suggestions.
-- **Keep us in the loop so that we can help.**
-  For example, if you are discussing problems with Cookiecutter on a mailing list, [file an issue](https://github.com/cookiecutter/cookiecutter/issues?q=is%3Aopen) where you link to the discussion thread and/or cc at least 1 core committer on the email.
-- Be encouraging.
+- 在issue页面[File an issue](https://github.com/cookiecutter/cookiecutter/issues?q=is%3Aopen) 反馈你的问题，这样Cookiecutter就可以改善它.
+  一些友好地或者建设性的意见更好。
+  提出详细地建议。
+- **随时向我们反馈，这样才能帮助.**
+  例如，如果你讨论关于Cookiecutter的问题时，在[file an issue](https://github.com/cookiecutter/cookiecutter/issues?q=is%3Aopen)讨论问题，或者抄送给一个核心提交者。
+- 请积极鼓励.
   A comment like "This function ought to be rewritten like this" is much more likely to result in action than a comment like "Eww, look how bad this function is."
+  好的备注更能鼓舞开发者，譬如"这个函数应该被重写"比"这个函数非常垃圾"要更能鼓舞开发人员。
 
-Waiting for a response to an issue/question?
+等待一个问题的反馈？
 
-- Be patient and persistent. All issues are on the core committer team's radar and will be considered thoughtfully, but we have a lot of issues to work through.
-  If urgent, it's fine to ping a core committer in the issue with a reminder.
-- Ask others to comment, discuss, review, etc.
-- Search the Cookiecutter repo for issues related to yours.
-- Need a fix/feature/release/help urgently, and can't wait?
-  [@audreyfeldroy](https://github.com/audreyfeldroy) is available for hire for consultation or custom development.
+- 请耐心等待。所有的issues都在核心开发者的监控上，并且会认真考虑，但是我们有问题的待解决。
+  如果情况紧急，最好是在问题上给核心开发者发送一个提醒。
+- 请其他人评论、讨论、检查等
+- 搜索Cookiecutter库中与你的问题相关的issue。
+- 需要一个非常紧急地fix/feature/release/help?
+  [@audreyfeldroy](https://github.com/audreyfeldroy) 可租用咨询或者开发
 
-## Support This Project
+## 支持本项目
 
-This project is run by volunteers.
-Shortly we will be providing means for organizations and individuals to support the project.
+这个项目由志愿者们运维。
+不久，我们将为组织和个人提供该项目的支持。
 
-## Code of Conduct
+## 代码规范
 
-Everyone interacting in the Cookiecutter project's codebases and documentation is expected to follow the [PyPA Code of Conduct](https://www.pypa.io/en/latest/code-of-conduct/).
-This includes but is not limited to, issue trackers, chat rooms, mailing lists, and other virtual or in real-life communication.
+Cookiecutte项目的所有代码和文档都应该遵循规范[PyPA Code of Conduct](https://www.pypa.io/en/latest/code-of-conduct/)。
+包括但不限于issue trackers, chat rooms, mailing lists, and other virtual or in real-life communication.
 
-## Creator / Leader
+## 创始人/主导人
 
-This project was created and led by [Audrey Roy Greenfeld](https://github.com/audreyfeldroy).
+本项目由[Audrey Roy Greenfeld](https://github.com/audreyfeldroy)创建与主导开发。
 
-She is supported by a team of maintainers.
+她得到了一组维护这支持。
